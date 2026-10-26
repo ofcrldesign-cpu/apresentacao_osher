@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA9F1D"/>
+      <stop offset="50%" stop-color="#DD8901"/>
+      <stop offset="100%" stop-color="#D27F02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- SÍMBOLO OSHER (Esquerda) -->
+  <g transform="translate(10, 10)">
+    <!-- O externo estilizado -->
+    <path d="M 40 12 C 55 12, 64 25, 64 42 C 64 54, 57 65, 47 70 C 44 71.5, 42 71.8, 40 71.8 C 38 71.8, 36 71.5, 33 70 C 23 65, 16 54, 16 42 C 16 25, 25 12, 40 12 Z M 40 22 C 31 22, 27 31, 27 42 C 27 52, 32 61, 40 61 C 48 61, 53 52, 53 42 C 53 31, 49 22, 40 22 Z" fill="url(#gold-grad)" />
+    
+    <!-- Figura Central (Cliente) -->
+    <circle cx="40" cy="51" r="5" fill="url(#gold-grad)" />
+
+    <!-- Arco inferior aberto (Tigela / Sorriso) -->
+    <path d="M 12 55 C 20 76, 60 76, 68 55 C 69 53, 67 52, 65 54 C 58 71, 22 71, 15 54 C 13 52, 11 53, 12 55 Z" fill="url(#gold-grad)" />
+  </g>
+
+  <!-- WORDMARK: OSHER (Direita) -->
+  <g transform="translate(95, 0)">
+    <text x="0" y="58" font-family="'Cormorant Garamond', Georgia, serif" font-size="46" font-weight="600" letter-spacing="7" fill="#222222">OSHER</text>
+    
+    <!-- Subtítulo: AÇAÍ SHOP com filetes -->
+    <g transform="translate(0, 74)">
+      <!-- Filete esquerdo afilado -->
+      <path d="M 0 0 L 30 -1 L 30 1 Z" fill="#DD8901" />
+      <text x="38" y="3" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3" fill="#DD8901">AÇAÍ SHOP</text>
+      <!-- Filete direito afilado -->
+      <path d="M 175 0 L 145 -1 L 145 1 Z" fill="#DD8901" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 100" width="100%" height="100%">
+  <!-- CORES ALTERADAS (AZUL/ROXO) - USO PROIBIDO -->
+  <g transform="translate(10, 10)">
+    <path d="M 40 12 C 55 12, 64 25, 64 42 C 64 54, 57 65, 47 70 C 44 71.5, 42 71.8, 40 71.8 C 38 71.8, 36 71.5, 33 70 C 23 65, 16 54, 16 42 C 16 25, 25 12, 40 12 Z M 40 22 C 31 22, 27 31, 27 42 C 27 52, 32 61, 40 61 C 48 61, 53 52, 53 42 C 53 31, 49 22, 40 22 Z" fill="#6C8EF8" />
+    <circle cx="40" cy="51" r="5" fill="#6C8EF8" />
+    <path d="M 12 55 C 20 76, 60 76, 68 55 C 69 53, 67 52, 65 54 C 58 71, 22 71, 15 54 C 13 52, 11 53, 12 55 Z" fill="#6C8EF8" />
+  </g>
+
+  <g transform="translate(95, 0)">
+    <text x="0" y="58" font-family="'Cormorant Garamond', Georgia, serif" font-size="46" font-weight="600" letter-spacing="7" fill="#2C3E50">OSHER</text>
+    <g transform="translate(0, 74)">
+      <path d="M 0 0 L 30 -1 L 30 1 Z" fill="#6C8EF8" />
+      <text x="38" y="3" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3" fill="#6C8EF8">AÇAÍ SHOP</text>
+      <path d="M 175 0 L 145 -1 L 145 1 Z" fill="#6C8EF8" />
+    </g>
+  </g>
+</svg>

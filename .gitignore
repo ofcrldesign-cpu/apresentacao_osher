@@ -1,0 +1,61 @@
+# ==============================================================================
+# .gitignore — OSHER Açaí Shop
+# ==============================================================================
+
+# Arquivos e informações confidenciais / credenciais
+*meu_git.txt
+*.key
+*.pem
+*.pfx
+*.cert
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+!.env.example
+
+# Arquivos de Sistema Operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editores e IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Logs e relatórios de erro
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node / Dependências (caso integradas futuramente)
+node_modules/
+dist/
+build/
+.cache/
+
+# Python / Caches e Scripts de teste temporários
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Antigravity / Gemini IDE local
+.gemini/
