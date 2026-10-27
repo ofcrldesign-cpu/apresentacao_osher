@@ -38,8 +38,20 @@
     <div class="hero-glow-orb"></div>
     <div class="container hero-content">
       
-      <div class="hero-logo-box reveal-zoom">
-        <img src="assets/osher_logo_cover.png" alt="Logo Oficial OSHER Açaí Shop">
+      <!-- Capa Interativa com a Logo Maior fora do Círculo -->
+      <div class="hero-interactive-cover reveal-zoom" id="heroCoverInteractive">
+        <div class="cover-glow-backdrop"></div>
+        <div class="hero-logo-showcase" id="heroLogoShowcase">
+          <img src="assets/osher_logo_clean.png" alt="Logo Oficial OSHER Açaí Shop" class="hero-logo-img">
+        </div>
+        <div class="cover-interactive-badge">
+          <span class="pulse-dot"></span>
+          <span>Apresentação Oficial & Identidade da Marca</span>
+          <button type="button" class="btn-shine-trigger" id="btnShineTrigger" title="Ativar brilho dourado">
+            <svg viewBox="0 0 24 24" class="svg-inline-sparkle"><path fill="currentColor" d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>
+            <span>Interagir</span>
+          </button>
+        </div>
       </div>
 
       <div class="section-tag reveal delay-1">
@@ -1200,9 +1212,10 @@
       <div class="mockup-filter-bar reveal">
         <button class="filter-btn active" data-filter="all">Todos os Mockups</button>
         <button class="filter-btn" data-filter="cardapio">Cardápios Oficiais</button>
+        <button class="filter-btn" data-filter="papelaria">Papelaria & PDV</button>
         <button class="filter-btn" data-filter="copos-bowls">Copos & Bowls</button>
         <button class="filter-btn" data-filter="embalagem">Embalagens & Sacolas</button>
-        <button class="filter-btn" data-filter="uniformes">Uniformes</button>
+        <button class="filter-btn" data-filter="uniformes">Totem & Vestuário</button>
         <button class="filter-btn" data-filter="loja">Loja & Ambiente</button>
       </div>
 
@@ -1233,8 +1246,32 @@
           </div>
         </div>
 
-        <!-- Copos & Bowls Cerâmica Gourmet (Nova Imagem Gerada) -->
-        <div class="mockup-card reveal-zoom delay-2" data-category="copos-bowls">
+        <!-- Nova Imagem: Papelaria Corporativa Luxo -->
+        <div class="mockup-card span-2 reveal-zoom delay-2" data-category="papelaria">
+          <div class="mockup-img-wrap" data-lightbox-src="assets/osher_papelaria_corporativa.jpg" data-lightbox-caption="Manual de Aplicações: Papelaria Corporativa de Luxo — Pasta executiva, papel timbrado com filigrana, envelope com lacre de cera dourada e cartões de visita com hot stamping">
+            <span class="mockup-badge">Papelaria Corporativa</span>
+            <img src="assets/osher_papelaria_corporativa.jpg" alt="Papelaria Corporativa OSHER Açaí Shop">
+          </div>
+          <div class="mockup-info">
+            <h4>Manual de Aplicações: Papelaria Corporativa de Luxo</h4>
+            <p>Conjunto executivo de alta fidelidade: pasta institucional grafite, papel timbrado A4, envelopes com lacre de cera dourada em relevo e cartões de visita com hot stamping metálico e bordas douradas.</p>
+          </div>
+        </div>
+
+        <!-- Nova Imagem: Papelaria Ponto de Venda & Mesa -->
+        <div class="mockup-card span-2 reveal-zoom" data-category="papelaria">
+          <div class="mockup-img-wrap" data-lightbox-src="assets/osher_papelaria_pdv.jpg" data-lightbox-caption="Manual de Aplicações: Papelaria de Ponto de Venda & Balcão — Display de mesa em latão escovado e acrílico, cartões fidelidade OSHER Club, porta-copos em couro escuro e talheres biodegradáveis">
+            <span class="mockup-badge">Papelaria & PDV</span>
+            <img src="assets/osher_papelaria_pdv.jpg" alt="Papelaria Ponto de Venda OSHER">
+          </div>
+          <div class="mockup-info">
+            <h4>Manual de Aplicações: Papelaria de Ponto de Venda & Mesa</h4>
+            <p>Materiais de contato direto com o cliente: display de balcão em latão escovado e acrílico fumê com cardápio resumido, cartões de fidelidade do OSHER Club com 10 selos, porta-copos em couro gravado e envelopes de talheres ecológicos.</p>
+          </div>
+        </div>
+
+        <!-- Copos & Bowls Cerâmica Gourmet -->
+        <div class="mockup-card reveal-zoom delay-1" data-category="copos-bowls">
           <div class="mockup-img-wrap" data-lightbox-src="assets/osher_bowls_mockup.jpg" data-lightbox-caption="Mockup de Bowls Cerâmicos & Copos Kraft OSHER com açaí decorado e ouro comestível">
             <span class="mockup-badge">Bowls & Copos</span>
             <img src="assets/osher_bowls_mockup.jpg" alt="Bowls e Copos OSHER">
@@ -1246,18 +1283,18 @@
         </div>
 
         <!-- Embalagens Completas (Poster Materiais) -->
-        <div class="mockup-card span-2 reveal-zoom" data-category="embalagem">
+        <div class="mockup-card span-2 reveal-zoom delay-2" data-category="embalagem">
           <div class="mockup-img-wrap" data-lightbox-src="assets/materiais.jpg" data-lightbox-caption="Pôster Oficial do Brandkit: Copos, Potes, Sacola Kraft, Camiseta e Avental">
-            <span class="mockup-badge">Linha Completa</span>
+            <span class="mockup-badge">Linha de Embalagens</span>
             <img src="assets/materiais.jpg" alt="Apresentação de Materiais OSHER">
           </div>
           <div class="mockup-info">
-            <h4>Manual de Aplicações: Papelaria & Ponto de Venda</h4>
-            <p>Guia com copo cristal, pote de sorvete kraft com estampa de ramo de açaí, caixa de delivery e lacre com selo dourado.</p>
+            <h4>Linha Completa de Embalagens de Balcão</h4>
+            <p>Guia com copo cristal, pote de sorvete kraft com estampa de ramo de açaí, sacola kraft reforçada e lacre de segurança com selo dourado.</p>
           </div>
         </div>
 
-        <!-- Embalagens Delivery Luxo (Nova Imagem Gerada) -->
+        <!-- Embalagens Delivery Luxo -->
         <div class="mockup-card reveal-zoom delay-1" data-category="embalagem">
           <div class="mockup-img-wrap" data-lightbox-src="assets/osher_delivery_packaging.jpg" data-lightbox-caption="Embalagens de Entrega Luxo: Sacola preta kraft com foil dourado e potes térmicos">
             <span class="mockup-badge">Delivery Luxo</span>
@@ -1269,7 +1306,7 @@
           </div>
         </div>
 
-        <!-- Arquitetura e Interior da Loja (Nova Imagem Gerada) -->
+        <!-- Arquitetura e Interior da Loja -->
         <div class="mockup-card span-2 reveal-zoom delay-2" data-category="loja">
           <div class="mockup-img-wrap" data-lightbox-src="assets/osher_store_ambiance.jpg" data-lightbox-caption="Projeto de Arquitetura de Interiores: Loja Boutique OSHER com balcão de mármore e letreiro dourado">
             <span class="mockup-badge">Boutique & Balcão</span>
@@ -1281,15 +1318,15 @@
           </div>
         </div>
 
-        <!-- Uniformes & Equipe -->
-        <div class="mockup-card reveal-zoom" data-category="uniformes">
-          <div class="mockup-img-wrap" data-lightbox-src="assets/Gemini_Generated_Image_6m4din6m4din6m4d.jpg" data-lightbox-caption="Experiência Real: Equipe e clientes em área externa com uniformes e totem oficial">
-            <span class="mockup-badge">Totem & Uniformes</span>
-            <img src="assets/Gemini_Generated_Image_6m4din6m4din6m4d.jpg" alt="Clientes e Totem OSHER">
+        <!-- Nova Imagem: Totem Arquitetônico & Uniformes Oficiais (100% Sem Pessoas) -->
+        <div class="mockup-card span-2 reveal-zoom" data-category="uniformes">
+          <div class="mockup-img-wrap" data-lightbox-src="assets/osher_totem_fachada.jpg" data-lightbox-caption="Totem Arquitetônico e Uniformes Oficiais OSHER: Totem monolítico com LED backlit e mostruário de avental e polo em algodão nobre (fotografia arquitetônica sem pessoas)">
+            <span class="mockup-badge">Totem & Vestuário (Sem Pessoas)</span>
+            <img src="assets/osher_totem_fachada.jpg" alt="Totem Iluminado e Mostruário Oficial OSHER">
           </div>
           <div class="mockup-info">
-            <h4>Camisetas & Totem de Fachada</h4>
-            <p>Camisetas em algodão 100% grafite com logo no peito e totem dourado com cardápio de entrada.</p>
+            <h4>Totem Iluminado & Mostruário de Fachada</h4>
+            <p>Totem monolítico em metal escuro com iluminação LED dourada e cardápio de entrada, ao lado do mostruário oficial de avental e camiseta polo grafite com bordado dourado computadorizado (100% sem pessoas).</p>
           </div>
         </div>
 
@@ -1326,53 +1363,109 @@
         </p>
       </div>
 
-      <!-- App Switcher Tabs -->
+      <!-- App Switcher Tabs com Identidade Real dos Apps -->
       <div class="app-tabs-selector reveal">
-        <button class="app-tab-btn active" data-app="ifood">
-          <span style="color: #EA1D2C; font-size: 1.3rem;">●</span>
-          <span>iFood Store</span>
+        <button class="app-tab-btn app-brand-ifood active" data-app="ifood">
+          <span class="app-brand-badge ifood-badge">
+            <svg viewBox="0 0 24 24" class="svg-app-logo"><path fill="#EA1D2C" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5.17-1.39-6.58-3.5.28-.15.82-.41 1.49-.62.96 1.48 2.64 2.46 4.59 2.46s3.63-.98 4.59-2.46c.67.21 1.21.47 1.49.62C16.17 15.61 14.76 17 12 17zm4.25-6.5c-.69 0-1.25-.56-1.25-1.25S15.56 8 16.25 8s1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm-8.5 0c-.69 0-1.25-.56-1.25-1.25S7.06 8 7.75 8s1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+          </span>
+          <span class="app-tab-name">iFood</span>
         </button>
-        <button class="app-tab-btn" data-app="keeta">
-          <span style="color: #FFDE00; font-size: 1.3rem;">●</span>
-          <span>Keeta Express</span>
+
+        <button class="app-tab-btn app-brand-keeta" data-app="keeta">
+          <span class="app-brand-badge keeta-badge">
+            <svg viewBox="0 0 24 24" class="svg-app-logo"><path fill="#FFD100" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </span>
+          <span class="app-tab-name">KeeTa</span>
         </button>
-        <button class="app-tab-btn" data-app="food99">
-          <span style="color: #FF9900; font-size: 1.3rem;">●</span>
-          <span>99 Food</span>
+
+        <button class="app-tab-btn app-brand-food99" data-app="food99">
+          <span class="app-brand-badge food99-badge">
+            <svg viewBox="0 0 24 24" class="svg-app-logo"><path fill="#FF7D00" d="M7 3h6a5 5 0 0 1 5 5v1a5 5 0 0 1-5 5h-2v7H7V3zm4 4v3h2a2 2 0 1 0 0-4h-2zm10 5h4a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4h-2v3h-4v-12h2zm2 3v3h1a1 1 0 0 0 0-2h-1v-1z"/></svg>
+          </span>
+          <span class="app-tab-name">99 Food</span>
         </button>
-        <button class="app-tab-btn" data-app="proprio">
-          <span style="color: #DD8901; font-size: 1.3rem;">👑</span>
-          <span>App Próprio OSHER</span>
+
+        <button class="app-tab-btn app-brand-proprio" data-app="proprio">
+          <span class="app-brand-badge proprio-badge">
+            <svg viewBox="0 0 24 24" class="svg-app-logo"><polygon points="12 2 15 8 22 9 17 14 18 21 12 17.7 6 21 7 14 2 9 9 8 12 2" fill="#DD8901"/></svg>
+          </span>
+          <span class="app-tab-name">App VIP OSHER</span>
         </button>
       </div>
 
-      <!-- Interactive App Interface Mockup Container -->
-      <div class="app-view-container reveal-zoom">
+      <!-- Interactive Smartphone Mockup Container -->
+      <div class="app-view-container reveal-zoom" id="appMockupContainer">
         
+        <!-- Smartphone Top Status Bar -->
+        <div class="smartphone-status-bar">
+          <span class="status-time">14:30</span>
+          <div class="smartphone-dynamic-island">
+            <span class="island-camera"></span>
+            <span class="island-sensor"></span>
+          </div>
+          <div class="status-icons">
+            <span class="signal-icon">5G</span>
+            <svg viewBox="0 0 24 24" class="status-svg"><path fill="currentColor" d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+            <svg viewBox="0 0 24 24" class="status-svg"><path fill="currentColor" d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+          </div>
+        </div>
+
+        <!-- In-App Navigation Bar with Platform Branding -->
+        <div class="app-navigation-bar" id="appNavBar">
+          <button class="app-nav-back" title="Voltar" type="button">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <div class="app-nav-search">
+            <svg viewBox="0 0 24 24" class="search-svg"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <span id="appNavSearchText">Buscar no cardápio iFood de OSHER...</span>
+          </div>
+          <div class="app-nav-actions">
+            <button class="app-nav-btn" title="Compartilhar" type="button">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <button class="app-nav-btn favorite-btn" title="Favoritar loja" type="button">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+
         <!-- App Header Banner -->
         <div class="app-header-banner">
           <img id="app-header-img" src="assets/osher_delivery_header.jpg" alt="Banner Oficial Delivery OSHER">
           <div class="app-header-overlay"></div>
+          <div class="app-platform-floating-pill" id="appFloatingPill">
+            <span class="pill-dot">●</span>
+            <span id="appFloatingPillText">Super Restaurante iFood</span>
+          </div>
         </div>
 
         <!-- Store Profile Information -->
         <div class="app-profile-row">
           <div class="app-logo-avatar">
-            <img src="assets/osher_logo_cover.png" alt="Logo OSHER App">
+            <img src="assets/osher_logo_clean.png" alt="Logo OSHER App">
+            <span class="verified-platform-tick" id="appVerifiedTick" title="Loja Oficial Verificada">✓</span>
           </div>
           <div class="app-store-info">
             <h3 id="app-store-title">OSHER Açaí Shop — iFood Store</h3>
             <div class="app-meta-badges">
-              <span class="rating-badge">★ <span id="app-rating-val">4.9</span></span>
-              <span id="app-reviews-val" style="color: var(--color-sand);">(520+ avaliações)</span>
+              <span class="rating-badge" id="appRatingBadge">★ <span id="app-rating-val">4.9</span></span>
+              <span id="app-reviews-val" style="color: var(--color-sand);">(520+ avaliações no iFood)</span>
               <span>•</span>
-              <span id="app-time-val" style="color: var(--color-gold);">25-35 min</span>
+              <span id="app-time-val" style="color: var(--color-gold);">🛵 25-35 min • Entrega iFood</span>
               <span>•</span>
               <span id="app-fee-val" style="color: #4ade80;">Entrega Grátis acima de R$ 45</span>
               <span>•</span>
-              <span id="app-badge-val" class="persona-badge" style="background: rgba(221,137,1,0.25);">Super Restaurante iFood</span>
+              <span id="app-badge-val" class="persona-badge" style="background: rgba(234,29,44,0.25); color: #ff6b78;">Super Restaurante iFood</span>
             </div>
           </div>
+        </div>
+
+        <!-- Platform Official Promotion / Coupon Ribbon -->
+        <div class="app-promo-ribbon" id="appPromoRibbon">
+          <span class="promo-icon">🏷️</span>
+          <span id="appPromoText">Cupom de R$ 10 OFF disponível no Clube iFood para pedidos acima de R$ 40</span>
+          <button type="button" class="btn-claim-coupon" id="btnClaimCoupon">Eu Quero</button>
         </div>
 
         <!-- Menu Feed & Showcase Items -->
@@ -1388,7 +1481,10 @@
               <div class="app-prod-details">
                 <h4 class="app-prod-title">Copo OSHER 500ml (Monte do Seu Jeito)</h4>
                 <p class="app-prod-desc">Açaí artesanal cremoso + Sorvete artesanal + 2 Caldas especiais + 3 Complementos à sua escolha.</p>
-                <span class="app-prod-price">R$ 17,00</span>
+                <div class="app-prod-action-row">
+                  <span class="app-prod-price">R$ 17,00</span>
+                  <button type="button" class="btn-add-item">+ Adicionar</button>
+                </div>
               </div>
               <img class="app-prod-img" src="assets/cardapio1.jpg" alt="Copo OSHER 500ml">
             </div>
@@ -1398,7 +1494,10 @@
               <div class="app-prod-details">
                 <h4 class="app-prod-title">Shake dos Artists 500ml</h4>
                 <p class="app-prod-desc">Exclusividade OSHER com textura aveludada, toppings em pó e frutas frescas selecionadas.</p>
-                <span class="app-prod-price">R$ 25,00</span>
+                <div class="app-prod-action-row">
+                  <span class="app-prod-price">R$ 25,00</span>
+                  <button type="button" class="btn-add-item">+ Adicionar</button>
+                </div>
               </div>
               <img class="app-prod-img" src="assets/feed1.jpg" alt="Shake dos Artists">
             </div>
@@ -1408,7 +1507,10 @@
               <div class="app-prod-details">
                 <h4 class="app-prod-title">Combo Casal OSHER (2 Copos 400ml)</h4>
                 <p class="app-prod-desc">2 copos de 400ml montados do seu jeito com adicionais gourmet inclusos.</p>
-                <span class="app-prod-price">R$ 30,00</span>
+                <div class="app-prod-action-row">
+                  <span class="app-prod-price">R$ 30,00</span>
+                  <button type="button" class="btn-add-item">+ Adicionar</button>
+                </div>
               </div>
               <img class="app-prod-img" src="assets/feed2.jpg" alt="Combo Casal">
             </div>
@@ -1418,11 +1520,32 @@
               <div class="app-prod-details">
                 <h4 class="app-prod-title">Mega Pote OSHER 1000ml Família</h4>
                 <p class="app-prod-desc">1 Litro de puro sabor para compartilhar com família e amigos.</p>
-                <span class="app-prod-price">R$ 36,00</span>
+                <div class="app-prod-action-row">
+                  <span class="app-prod-price">R$ 36,00</span>
+                  <button type="button" class="btn-add-item">+ Adicionar</button>
+                </div>
               </div>
               <img class="app-prod-img" src="assets/cardapio2.jpg" alt="Mega Pote OSHER">
             </div>
 
+          </div>
+        </div>
+
+        <!-- Floating App Cart Summary Bar -->
+        <div class="app-bottom-cart-bar" id="appBottomCartBar">
+          <div class="cart-left">
+            <div class="cart-bag-icon">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
+              <span class="cart-count-badge">1</span>
+            </div>
+            <div class="cart-info">
+              <span class="cart-text">Ver Sacola</span>
+              <span class="cart-subtext">Copo OSHER 500ml</span>
+            </div>
+          </div>
+          <div class="cart-right">
+            <span class="cart-total-price">R$ 17,00</span>
+            <span class="cart-btn-label">Avançar →</span>
           </div>
         </div>
 

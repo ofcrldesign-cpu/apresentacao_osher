@@ -5,6 +5,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroInteractiveCover();
   initParallax();
   initScrollAnimations();
   initScrollProgressBar();
@@ -58,6 +59,54 @@ function initParallax() {
   }, { passive: true });
 
   updateParallax();
+}
+
+/* --------------------------------------------------------------------------
+   0.1 Capa Interativa da Logo (3D Perspective Tilt & Golden Shine)
+   -------------------------------------------------------------------------- */
+function initHeroInteractiveCover() {
+  const cover = document.getElementById('heroCoverInteractive');
+  const showcase = document.getElementById('heroLogoShowcase');
+  const shineBtn = document.getElementById('btnShineTrigger');
+  if (!cover || !showcase) return;
+
+  cover.addEventListener('mousemove', (e) => {
+    const rect = cover.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    const rotX = -(y / (rect.height / 2)) * 12;
+    const rotY = (x / (rect.width / 2)) * 12;
+    showcase.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.03, 1.03, 1.03)`;
+  });
+
+  cover.addEventListener('mouseleave', () => {
+    showcase.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  });
+
+  function triggerShine() {
+    showcase.style.transition = 'filter 0.3s ease, transform 0.3s ease';
+    showcase.style.filter = 'drop-shadow(0 25px 50px rgba(0,0,0,0.95)) drop-shadow(0 0 75px rgba(255,215,120,0.9)) brightness(1.25)';
+    showcase.style.transform = 'perspective(1000px) scale3d(1.06, 1.06, 1.06)';
+    playClickSound();
+    showToast('✨ Identidade Oficial OSHER: Açaí + Sorvete. Do seu jeito.');
+
+    setTimeout(() => {
+      showcase.style.transition = 'transform 0.18s ease-out, filter 0.35s ease';
+      showcase.style.filter = '';
+      showcase.style.transform = '';
+    }, 800);
+  }
+
+  if (shineBtn) {
+    shineBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      triggerShine();
+    });
+  }
+
+  cover.addEventListener('click', () => {
+    triggerShine();
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -392,13 +441,20 @@ const appConfigurations = {
   ifood: {
     brandName: 'OSHER Açaí Shop — iFood Store',
     rating: '4.9',
-    reviews: '(520+ avaliações)',
-    time: '25-35 min',
+    reviews: '(520+ avaliações no iFood)',
+    time: '🛵 25-35 min • Entrega iFood',
     fee: 'Entrega Grátis acima de R$ 45',
     themeColor: '#EA1D2C',
     badge: 'Super Restaurante iFood',
+    badgeBg: 'rgba(234, 29, 44, 0.25)',
+    badgeColor: '#ff6b78',
+    floatingPill: 'Super Restaurante iFood',
+    searchText: 'Buscar no cardápio iFood de OSHER...',
+    promoText: '🏷️ Cupom de R$ 10 OFF disponível no Clube iFood para pedidos acima de R$ 40',
     headerBanner: 'assets/osher_delivery_header.jpg',
     category: '⭐ Destaques & Mais Pedidos do iFood',
+    cartColor: '#EA1D2C',
+    buttonText: '+ Adicionar',
     products: [
       {
         title: 'Copo OSHER 500ml (Monte do Seu Jeito)',
@@ -427,15 +483,22 @@ const appConfigurations = {
     ]
   },
   keeta: {
-    brandName: 'OSHER Açaí Shop — Keeta Express',
+    brandName: 'OSHER Açaí Shop — KeeTa Express',
     rating: '4.95',
-    reviews: '(310+ pedidos)',
-    time: '20-30 min',
-    fee: 'Frete Promocional Keeta R$ 0,99',
-    themeColor: '#FFDE00',
-    badge: 'Keeta On-Time Guarantee',
+    reviews: '(380+ pedidos KeeTa)',
+    time: '⚡ 15-25 min • KeeTa Express',
+    fee: 'Frete Promocional KeeTa R$ 0,99',
+    themeColor: '#FFD100',
+    badge: '⚡ KeeTa On-Time Guarantee',
+    badgeBg: 'rgba(255, 209, 0, 0.2)',
+    badgeColor: '#FFD100',
+    floatingPill: '⚡ KeeTa On-Time Guarantee',
+    searchText: 'Buscar no cardápio KeeTa de OSHER...',
+    promoText: '⚡ KeeTa On-Time: Entrega no prazo garantida ou cupom de R$ 15 de volta',
     headerBanner: 'assets/osher_delivery_packaging.jpg',
-    category: '⚡ Entrega Rápida & Combos de Outono',
+    category: '⚡ Entrega Rápida & Combos de Outono KeeTa',
+    cartColor: '#1D1D1F',
+    buttonText: '+ Pedir KeeTa',
     products: [
       {
         title: 'Bowl Gourmet OSHER + Frutas Vermelhas',
@@ -466,13 +529,20 @@ const appConfigurations = {
   food99: {
     brandName: 'OSHER Açaí Shop — 99 Food',
     rating: '4.88',
-    reviews: '(440+ notas)',
-    time: '25-35 min',
-    fee: 'Cupom 99FOOD R$ 10 OFF',
-    themeColor: '#FF9900',
-    badge: '99 Food Seleção Gourmet',
+    reviews: '(440+ notas 99Food)',
+    time: '🛵 20-30 min • 99Food Direta',
+    fee: 'Cupom 99FOOD: R$ 12 OFF no 1º Pedido',
+    themeColor: '#FF7D00',
+    badge: '★ 99Food Seleção Ouro',
+    badgeBg: 'rgba(255, 125, 0, 0.2)',
+    badgeColor: '#FF7D00',
+    floatingPill: '★ 99Food Seleção Ouro',
+    searchText: 'Buscar no cardápio 99 Food de OSHER...',
+    promoText: '🎁 10% de Cashback no 99Pay + Taxa de Entrega Zero no primeiro pedido',
     headerBanner: 'assets/osher_delivery_header.jpg',
     category: '🔥 Promoções Exclusivas 99 Food',
+    cartColor: '#FF7D00',
+    buttonText: '+ Adicionar',
     products: [
       {
         title: 'PAGUE 2 LEVE 3 — 3 Copos de 200ml',
@@ -503,13 +573,20 @@ const appConfigurations = {
   proprio: {
     brandName: 'App OSHER Oficial • Clube VIP',
     rating: '5.0',
-    reviews: '(1.200+ clientes VIP)',
-    time: '20-30 min',
-    fee: 'Frete Grátis • Sem Taxas de Apps • 15% OFF',
+    reviews: '(1.200+ membros VIP)',
+    time: '🚀 20-30 min • Logística Própria',
+    fee: 'Frete 100% Grátis • 15% OFF Direto',
     themeColor: '#DD8901',
-    badge: '👑 App Próprio Exclusivo',
-    headerBanner: 'assets/osher_delivery_header.jpg',
+    badge: '👑 Clube VIP OSHER • 0% Taxas',
+    badgeBg: 'rgba(221, 137, 1, 0.25)',
+    badgeColor: '#FFDC8C',
+    floatingPill: '👑 Canal Oficial OSHER',
+    searchText: 'Buscar no App Oficial OSHER VIP...',
+    promoText: '👑 Clube VIP: Sem taxas de intermediários + Pontos OSHER Ouro em dobro',
+    headerBanner: 'assets/osher_store_ambiance.jpg',
     category: '👑 Experiência VIP Oficial • Monte do Seu Jeito',
+    cartColor: '#DD8901',
+    buttonText: '+ Pedir VIP',
     products: [
       {
         title: 'Copo OSHER 500ml VIP + Calda Manuka Gold',
@@ -539,8 +616,12 @@ const appConfigurations = {
   }
 };
 
+let cartItemsCount = 1;
+
 function initAppTabs() {
   const tabs = document.querySelectorAll('.app-tab-btn');
+  const claimBtn = document.getElementById('btnClaimCoupon');
+  const cartBar = document.getElementById('appBottomCartBar');
   if (tabs.length === 0) return;
 
   tabs.forEach(tab => {
@@ -553,12 +634,27 @@ function initAppTabs() {
       playClickSound();
     });
   });
+
+  if (claimBtn) {
+    claimBtn.addEventListener('click', () => {
+      showToast('🎟️ Cupom de desconto ativado com sucesso para este app!');
+      playClickSound();
+    });
+  }
+
+  if (cartBar) {
+    cartBar.addEventListener('click', () => {
+      showToast(`🛒 Sacola: ${cartItemsCount} item(s) selecionado(s). Pedido pronto para envio!`);
+      playClickSound();
+    });
+  }
 }
 
 function renderAppView(appKey) {
   const config = appConfigurations[appKey];
   if (!config) return;
 
+  const container = document.getElementById('appMockupContainer');
   const titleEl = document.getElementById('app-store-title');
   const ratingEl = document.getElementById('app-rating-val');
   const reviewsEl = document.getElementById('app-reviews-val');
@@ -568,15 +664,59 @@ function renderAppView(appKey) {
   const bannerImg = document.getElementById('app-header-img');
   const catTitleEl = document.getElementById('app-category-name');
   const productsContainer = document.getElementById('app-products-list');
+  const floatingPillText = document.getElementById('appFloatingPillText');
+  const searchPlaceholder = document.getElementById('appNavSearchText');
+  const promoText = document.getElementById('appPromoText');
+  const promoRibbon = document.getElementById('appPromoRibbon');
+  const claimBtn = document.getElementById('btnClaimCoupon');
+  const verifiedTick = document.getElementById('appVerifiedTick');
+  const bottomCartBar = document.getElementById('appBottomCartBar');
 
+  if (container) {
+    container.style.borderColor = config.themeColor;
+    container.style.boxShadow = `0 35px 90px rgba(0, 0, 0, 0.85), 0 0 40px ${config.themeColor}33`;
+  }
   if (titleEl) titleEl.textContent = config.brandName;
   if (ratingEl) ratingEl.textContent = config.rating;
   if (reviewsEl) reviewsEl.textContent = config.reviews;
   if (timeEl) timeEl.textContent = config.time;
   if (feeEl) feeEl.textContent = config.fee;
-  if (badgeEl) badgeEl.textContent = config.badge;
+  
+  if (badgeEl) {
+    badgeEl.textContent = config.badge;
+    badgeEl.style.background = config.badgeBg;
+    badgeEl.style.color = config.badgeColor;
+  }
   if (bannerImg) bannerImg.src = config.headerBanner;
   if (catTitleEl) catTitleEl.textContent = config.category;
+  if (floatingPillText) floatingPillText.textContent = config.floatingPill;
+  if (searchPlaceholder) searchPlaceholder.textContent = config.searchText;
+  if (promoText) promoText.textContent = config.promoText;
+
+  if (promoRibbon) {
+    promoRibbon.style.borderColor = `${config.themeColor}66`;
+    promoRibbon.style.background = `${config.themeColor}1a`;
+  }
+  if (claimBtn) {
+    claimBtn.style.backgroundColor = config.themeColor;
+    if (appKey === 'keeta') claimBtn.style.color = '#000';
+    else claimBtn.style.color = '#fff';
+  }
+  if (verifiedTick) {
+    verifiedTick.style.backgroundColor = config.themeColor;
+    if (appKey === 'keeta') verifiedTick.style.color = '#000';
+    else verifiedTick.style.color = '#fff';
+  }
+  if (bottomCartBar) {
+    bottomCartBar.style.backgroundColor = config.cartColor;
+    if (appKey === 'keeta') {
+      bottomCartBar.style.color = '#FFD100';
+      bottomCartBar.style.border = '2px solid #FFD100';
+    } else {
+      bottomCartBar.style.color = '#fff';
+      bottomCartBar.style.border = 'none';
+    }
+  }
 
   if (productsContainer) {
     productsContainer.innerHTML = '';
@@ -587,12 +727,28 @@ function renderAppView(appKey) {
         <div class="app-prod-details">
           <h4 class="app-prod-title">${p.title}</h4>
           <p class="app-prod-desc">${p.desc}</p>
-          <span class="app-prod-price">${p.price}</span>
+          <div class="app-prod-action-row">
+            <span class="app-prod-price">${p.price}</span>
+            <button type="button" class="btn-add-item">${config.buttonText}</button>
+          </div>
         </div>
         <img class="app-prod-img" src="${p.img}" alt="${p.title}" />
       `;
+
+      const addBtn = card.querySelector('.btn-add-item');
+      if (addBtn && appKey === 'keeta') {
+        addBtn.style.borderColor = '#FFD100';
+        addBtn.style.color = '#FFD100';
+      } else if (addBtn) {
+        addBtn.style.borderColor = config.themeColor;
+        addBtn.style.color = config.themeColor;
+      }
+
       card.addEventListener('click', () => {
-        showToast(`Item selecionado: ${p.title} — ${p.price}`);
+        cartItemsCount++;
+        const badge = document.querySelector('.cart-count-badge');
+        if (badge) badge.textContent = cartItemsCount;
+        showToast(`Item adicionado à sacola: ${p.title} (${p.price})`);
         playClickSound();
       });
       productsContainer.appendChild(card);
