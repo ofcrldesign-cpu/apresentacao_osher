@@ -285,7 +285,7 @@ let storyTimer = null;
 let storyProgress = 0;
 let isStoryPlaying = true;
 let isAudioMuted = true;
-const STORY_DURATION = 5000; // 5 seconds per story
+const STORY_DURATION = 7000; // 7 seconds per story
 const TICK_INTERVAL = 50;
 
 function initStoriesPlayer() {
@@ -297,6 +297,26 @@ function initStoriesPlayer() {
   const tapRight = document.querySelector('.tap-zone.right');
 
   if (slides.length === 0) return;
+
+  function syncActiveSlideVideo() {
+    slides.forEach((slide, idx) => {
+      const vid = slide.querySelector('video');
+      if (vid) {
+        if (idx === storyCurrentIndex) {
+          vid.currentTime = 0;
+          vid.muted = isAudioMuted;
+          if (isStoryPlaying) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        } else {
+          vid.pause();
+          vid.currentTime = 0;
+        }
+      }
+    });
+  }
 
   function updateStoryUI() {
     slides.forEach((slide, idx) => {
@@ -323,6 +343,7 @@ function initStoriesPlayer() {
       storyCurrentIndex = 0; // loop back
     }
     updateStoryUI();
+    syncActiveSlideVideo();
     playStoryBeep();
   }
 
@@ -334,6 +355,7 @@ function initStoriesPlayer() {
       storyCurrentIndex = slides.length - 1;
     }
     updateStoryUI();
+    syncActiveSlideVideo();
     playStoryBeep();
   }
 
@@ -351,6 +373,7 @@ function initStoriesPlayer() {
   }
 
   startStoryTimer();
+  syncActiveSlideVideo();
 
   // Navigation taps
   if (tapLeft) {
@@ -372,6 +395,15 @@ function initStoriesPlayer() {
         ? '<span>⏸</span> Pausar Story' 
         : '<span>▶</span> Reproduzir';
       playBtn.classList.toggle('active', isStoryPlaying);
+      
+      const activeVid = slides[storyCurrentIndex]?.querySelector('video');
+      if (activeVid) {
+        if (isStoryPlaying) {
+          activeVid.play().catch(() => {});
+        } else {
+          activeVid.pause();
+        }
+      }
     });
   }
 
@@ -383,6 +415,14 @@ function initStoriesPlayer() {
         ? '<span>🔇</span> Ativar Som' 
         : '<span>🔊</span> Som Ativo';
       soundBtn.classList.toggle('active', !isAudioMuted);
+      
+      slides.forEach(slide => {
+        const vid = slide.querySelector('video');
+        if (vid) {
+          vid.muted = isAudioMuted;
+        }
+      });
+
       if (!isAudioMuted) {
         playWelcomeChime();
         showToast('Áudio imersivo ativado para o Stories');
